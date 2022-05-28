@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PelangganController;
+use Illuminate\Http\Request;
 
 
 /*
@@ -26,3 +28,5 @@ Route::get('/home', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('pelanggan', PelangganController::class);
