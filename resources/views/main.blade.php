@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Aplikasi Rental Mobil - Dashboard</title>
+    <title>2nd Mobil Bekas Malang - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('bootstrapp/style/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Rental Mobil</div>
+                <div class="sidebar-brand-text mx-3">2nd Mobil Bekas</div>
             </a>
 
             <!-- Divider -->
@@ -350,7 +350,15 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+</button>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                 </div>
             </div>
         </div>
