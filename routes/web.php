@@ -30,3 +30,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('pelanggan', PelangganController::class);
+
+Route::get('pelanggans', 'DataPelangganController@data');
