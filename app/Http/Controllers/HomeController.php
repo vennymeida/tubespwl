@@ -42,6 +42,6 @@ class HomeController extends Controller
     public function indexbarang()
     {
         $barangs = Barang ::paginate(20);
-        return view('home', compact ('barangs'));
+        return view('homepelanggan', compact ('barangs'));
     }
 }

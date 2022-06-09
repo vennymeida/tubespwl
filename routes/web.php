@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PesanController;
 use App\Http\Controllers\PelangganController;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,11 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/homepelanggan', [App\Http\Controllers\HomeController::class, 'indexbarang'])->name('homepelanggan');
+Route::get('/pesan/{id}', [App\Http\Controllers\PesanController::class, 'index'])->name('pesan.index');
+// Route::get('/pesan/checkout', [App\Http\Controllers\PesanController::class, 'pesan'])->name('pesan.check_out');
 Route::resource('pelanggan', PelangganController::class);
 
-Route::get('pelanggans', 'DataPelangganController@data');
+// Route::get('pelanggans', 'DataPelangganController@data');
+
+// Route::get('/homepelanggan', 'HomeController@index')->name('homepelanggan');
