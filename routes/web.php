@@ -31,4 +31,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('pelanggan', PelangganController::class);
 
-Route::get('pelanggans', 'DataPelangganController@data');
+Route::get('/pelanggans',[App\Http\Controllers\DataPelangganController::class, 'layout'])->name('data');

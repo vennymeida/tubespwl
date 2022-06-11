@@ -19,7 +19,7 @@ class PelangganController extends Controller
             $paginate = Pelanggan::where('nik', 'like', '%' . request('search') . '%')
                                     ->orwhere('nama', 'like', '%' . request('search') . '%')
                                     ->orwhere('alamat', 'like', '%' . request('search') . '%')
-                                    ->orwhere('telepom', 'like', '%' . request('search') . '%')->paginate(3); // Mengambil semua isi tabel
+                                    ->orwhere('telepon', 'like', '%' . request('search') . '%')->paginate(3); // Mengambil semua isi tabel
             return view('pelanggan.index', ['paginate'=>$paginate]);
         }else{
         //fungsi eloquent menampilkan data menggunakan pagination
