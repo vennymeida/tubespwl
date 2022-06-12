@@ -7,7 +7,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
             <div class="card-header">
-            Tambah Pelanggan
+            Tambah Mobil
             </div>
         <div class="card-body">
  @if ($errors->any())
@@ -20,23 +20,23 @@
         </ul>
     </div>
  @endif
-    <form method="post" action="{{ route('pelanggan.store') }}" enctype="multipart/form-data" id="myForm">
+    <form method="post" action="{{ route('barang.store') }}" enctype="multipart/form-data" id="myForm">
  @csrf
  <div class="form-group">
-    <label for="Nik">Nik</label> 
-        <input type="text" name="Nik" class="form-control" id="Nik" aria-describedby="Nik" > 
+    <label for="Merk">Merk</label> 
+        <input type="text" name="Merk" class="form-control" id="Merk" aria-describedby="Merk" > 
     </div>
     <div class="form-group">
-        <label for="Nama">Nama</label> 
-        <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" > 
+        <label for="Harga">Harga</label> 
+        <input type="Harga" name="Harga" class="form-control" id="Harga" aria-describedby="Harga" > 
     </div>
     <div class="form-group">
-        <label for="Alamat">Alamat</label> 
-        <input type="text" name="Alamat" class="form-control" id="Alamat" aria-describedby="Alamat" > 
+        <label for="Stok">Stok</label> 
+        <input type="text" name="Stok" class="form-control" id="Stok" aria-describedby="Stok" > 
     </div>
     <div class="form-group">
-        <label for="Telepon">Telepon</label> 
-        <input type="text" name="Telepon" class="form-control" id="Telepon" aria-describedby="Telepon" > 
+        <label for="Keterangan">Keterangan</label> 
+        <input type="text" name="Keterangan" class="form-control" id="Keterangan" aria-describedby="Keterangan" > 
     </div>
         <button type="submit" class="btn btn-primary">Submit</button>
          </form>
