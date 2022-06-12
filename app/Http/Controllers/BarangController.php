@@ -87,7 +87,7 @@ class BarangController extends Controller
     public function edit($merk)
     {
         //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa untuk diedit
-        $Barang = DB::table('barang')->where('merk', $merk)->first();
+        $Barang = DB::table('barangs')->where('merk', $merk)->first();
         return view('barang.edit', compact('Barang'));
     }
 
@@ -108,7 +108,7 @@ class BarangController extends Controller
             'Keterangan'=>'required',
         ]);
 
-        Pelanggan::where('nik',$nik)
+        Barang::where('merk',$merk)
         ->update([
             'merk'=>$request->Merk,
             'harga'=>$request->Harga,

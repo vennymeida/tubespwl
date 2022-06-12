@@ -32,7 +32,18 @@ Auth::routes();
 Route::get('/homepelanggan', [App\Http\Controllers\HomeController::class, 'indexbarang'])->name('homepelanggan');
 Route::get('/pesan/{id}', [App\Http\Controllers\PesanController::class, 'index'])->name('pesan.index');
 Route::post('/pesan/{id}', [App\Http\Controllers\PesanController::class, 'pesan'])->name('pesan.check_out');
-// Route::get('/pesan/checkout', [App\Http\Controllers\PesanController::class, 'pesan'])->name('pesan.check_out');
+//Route::get('/pesan/checkout', [App\Http\Controllers\PesanController::class, 'pesan'])->name('pesan.check_out');
 Route::resource('pelanggan', PelangganController::class);
 // Route::get('/homepelanggan', 'HomeController@index')->name('homepelanggan');
 Route::resource('barang', BarangController::class);
+// Route::middleware(['auth'])->group(function () {
+    
+//     Route::get('/dashboard', function () {
+//         $posts = Post::with('user')->get();
+//         return view('dashboard', ['posts' => $posts]);
+//     })->name('dashboard');
+
+//     Route::get('/post/create', [PostController::class, 'create'])->name('new-post');
+//     Route::post('/post/store', [PostController::class, 'store'])->name('store'); 
+
+// });
