@@ -29,15 +29,22 @@ Route::get('/home', function () {
 
 Auth::routes();
 
+// <!-- ROUTE USER PELANGGAN -->
 Route::get('/homepelanggan', [App\Http\Controllers\HomeController::class, 'indexbarang'])->name('homepelanggan');
 Route::get('/pesan/{id}', [App\Http\Controllers\PesanController::class, 'index'])->name('pesan.index');
+
 Route::post('/pesan/{id}', [App\Http\Controllers\PesanController::class, 'pesan'])->name('pesan.check_out');
-//Route::get('/pesan/checkout', [App\Http\Controllers\PesanController::class, 'pesan'])->name('pesan.check_out');
+Route::get('/check-out', [App\Http\Controllers\PesanController::class, 'check_out'])->name('pesan.check_out');
+
+Route::delete('check-out/{id}', [App\Http\Controllers\PesanController::class, 'delete'])->name('pesan.check_out');
+
+// Route::get('/konfirmasi-check-out', [App\Http\Controllers\PesanController::class, 'konfirmasi'])->name('pesan.check_out');
+
+// <!-- ROUTE USER ADMIN -->
 Route::resource('pelanggan', PelangganController::class);
-// Route::get('/homepelanggan', 'HomeController@index')->name('homepelanggan');
 Route::resource('barang', BarangController::class);
 // Route::middleware(['auth'])->group(function () {
-    
+// Route::get('check-out', 'PesanController@check_out');   
 //     Route::get('/dashboard', function () {
 //         $posts = Post::with('user')->get();
 //         return view('dashboard', ['posts' => $posts]);
