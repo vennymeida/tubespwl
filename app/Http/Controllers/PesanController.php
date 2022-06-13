@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Barang;
 use App\Pesanan;
-use App\User;
+use App\Models\User;
 use App\PesananDetail;
 use Auth;
 use Alert;

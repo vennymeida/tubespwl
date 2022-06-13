@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Alert;
-use App\User;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
