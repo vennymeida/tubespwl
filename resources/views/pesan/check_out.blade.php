@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{ url('homepelanggan') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
@@ -40,7 +40,7 @@
                                     <img src="{{ url('uploads') }}/{{ $pesanan_detail->barang->gambar }}" width="100" alt="...">
                                 </td>
                                 <td>{{ $pesanan_detail->barang->merk }}</td>
-                                <td>{{ $pesanan_detail->jumlah }} kain</td>
+                                <td>{{ $pesanan_detail->jumlah }} unit</td>
                                 <td align="right">Rp. {{ number_format($pesanan_detail->barang->harga) }}</td>
                                 <td align="right">Rp. {{ number_format($pesanan_detail->jumlah_harga) }}</td>
                                 <td>
@@ -67,7 +67,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.apppelanggan')
+@extends('layouts.app')
 @section('content')
 <div class="container">
     <div class="row">
@@ -66,17 +66,14 @@
                             </tr>
                              <tr>
                                 <td colspan="5" align="right"><strong>Total yang harus ditransfer :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($pesanan->kode+$pesanan->jumlah_harga) }}</strong></td>
-                                
+                                <td align="right"><strong>Rp. {{ number_format($pesanan->kode+$pesanan->jumlah_harga) }}</strong></td> 
                             </tr>
                         </tbody>
                     </table>
                     @endif
-
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 @endsection

@@ -38,7 +38,7 @@ Route::get('/check-out', [App\Http\Controllers\PesanController::class, 'check_ou
 
 Route::delete('check-out/{id}', [App\Http\Controllers\PesanController::class, 'delete'])->name('pesan.check_out');
 
-// Route::get('/konfirmasi-check-out', [App\Http\Controllers\PesanController::class, 'konfirmasi'])->name('pesan.check_out');
+Route::get('/konfirmasi-check-out', [App\Http\Controllers\PesanController::class, 'konfirmasi'])->name('pesan.check_out');
 
 // <!-- ROUTE USER ADMIN -->
 Route::resource('pelanggan', PelangganController::class);

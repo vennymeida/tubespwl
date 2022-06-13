@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{ url('homepelanggan') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
@@ -40,7 +40,6 @@
                                         <td>:</td>
                                         <td>{{ $barang->keterangan }}</td>
                                     </tr>
-                                   
                                     <tr>
                                         <td>Jumlah Pesan</td>
                                         <td>:</td>
@@ -52,9 +51,6 @@
                                             </form>
                                         </td>
                                     </tr>
-                                   
-                                    
-                                    
                                 </tbody>
                             </table>
                         </div>
