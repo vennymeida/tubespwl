@@ -39,6 +39,11 @@
         <label for="Keterangan">Keterangan</label> 
         <input type="text" name="Keterangan" class="form-control" id="Keterangan" aria-describedby="Keterangan" > 
     </div>
+    <div class="form-group">
+            <label for="featured_image">Foto</label>
+            <input type="file" name="featured_image" class="form-control" value="{{ $Barang->featured_image}}" id="featured_image" ariadescribedby="featured_image" >
+            <img style="width: 100%" src="{{ asset('./storage/'. $Barang->featured_image) }}" alt="">
+          </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     </div>

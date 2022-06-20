@@ -22,5 +22,6 @@ class Barang extends Model
         'Harga',
         'Stok',
         'Keterangan',
+        'featured_image',
         ];
 }

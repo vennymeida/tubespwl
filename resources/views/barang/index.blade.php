@@ -36,6 +36,7 @@
         <th>Harga</th>
         <th>Stok</th>
         <th>Keterangan</th>
+        <th>Foto</th>
         <th width="280px">Action</th>
  </tr>
  @foreach ($paginate as $pln)
@@ -44,6 +45,7 @@
         <td>{{ $pln ->harga }}</td>
         <td>{{ $pln ->stok }}</td>
         <td>{{ $pln ->keterangan }}</td>
+        <td><img width="50px" src="{{asset('storage/'.$pln->featured_image)}}"></td>
         <td>
     <form action="{{ route('barang.destroy',['barang'=>$pln->merk]) }}" method="POST">
  

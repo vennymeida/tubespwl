@@ -38,6 +38,10 @@
         <label for="Keterangan">Keterangan</label> 
         <input type="text" name="Keterangan" class="form-control" id="Keterangan" aria-describedby="Keterangan" > 
     </div>
+    <div class="form-group">
+            <label for="featured_image">Foto</label> 
+            <input type="file" name="featured_image" class="form-control" id="featured_image" aria-describedby="featured_image" > 
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
          </form>
     </div>

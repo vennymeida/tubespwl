@@ -47,19 +47,30 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        // if ($request->file('image')){
-        //     $image_name = $request->file('image')->store('images','public');
-        // }
         //melakukan validasi data
         $request->validate([
             'Merk'=>'required',
             'Harga'=>'required',
             'Stok'=>'required',
             'Keterangan'=>'required',
+            'featured_image' => 'required',
         ]);
 
+        $image_name = '';
+        if ($request->file('featured_image')) {
+            $image_name = $request->file('featured_image')->store('images', 'public');
+        }
+
+        
+        $Barang = new Barang;
+        $Barang->merk = $request->get('Merk');
+        $Barang->harga = $request->get('Harga');
+        $Barang->stok = $request->get('Stok');
+        $Barang->keterangan = $request->get('Keterangan');
+        $Barang->featured_image = $image_name;
+        // dd($Barang->featured_image);
         // //fungsi eloquent untuk menambahkan data
-        Barang::create($request->all());
+        $Barang->save();
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('barang.index')
         ->with('success','Barang Berhasil Ditambahakan');
@@ -106,6 +117,7 @@ class BarangController extends Controller
             'Harga'=>'required',
             'Stok'=>'required',
             'Keterangan'=>'required',
+            'featured_image' => 'required',
         ]);
 
         Barang::where('merk',$merk)
@@ -116,6 +128,17 @@ class BarangController extends Controller
             'keterangan'=>$request->Keterangan,
         ]);
 
+        if ($Barang->featured_image && file_exists(storage_path('app/public/'. $Barang->featured_image))) {
+            Storage::delete('public/'. $Barang->featured_image);
+        }
+
+        $image_name = '';
+        if ($request->file('featured_image')) {
+        $image_name = $request->file('featured_image')->store('images', 'public');
+        }
+
+        $Barang->featured_image = $image_name;
+        $Barang->save();
 
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('barang.index')
