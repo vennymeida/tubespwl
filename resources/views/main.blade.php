@@ -67,8 +67,15 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
+                        @if (auth()->user()->role=="admin")
                         <a class="collapse-item" href="{{ url('/pelanggan') }}">Data Pelanggan</a>
                         <a class="collapse-item" href="{{ url('/barang') }}">Data Mobil</a>
+                        <a class="collapse-item" href="{{ url('/user') }}">Data User</a>
+                        <a class="collapse-item" href="{{ url('/history') }}">Data Transaksi</a>
+                        @endif
+                        @if (auth()->user()->role=="pelanggan")
+                        <a class="collapse-item" href="{{ url('/homepelanggan') }}">Transaksi</a>
+                        @endif
                     </div>
                 </div>
             </li>

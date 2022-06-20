@@ -7,6 +7,7 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 
 
@@ -50,14 +51,7 @@ Route::get('history/{id}', [App\Http\Controllers\HistoryController::class, 'deta
 // <!-- ROUTE USER ADMIN -->
 Route::resource('pelanggan', PelangganController::class);
 Route::resource('barang', BarangController::class);
-// Route::middleware(['auth'])->group(function () {
-// Route::get('check-out', 'PesanController@check_out');   
-//     Route::get('/dashboard', function () {
-//         $posts = Post::with('user')->get();
-//         return view('dashboard', ['posts' => $posts]);
-//     })->name('dashboard');
+Route::resource('user', UsersController::class);
 
-//     Route::get('/post/create', [PostController::class, 'create'])->name('new-post');
-//     Route::post('/post/store', [PostController::class, 'store'])->name('store'); 
-
-// });
+// Route::get('admin', function () { return view('pelanggan.index'); })->middleware('checkRole:admin');
+// Route::get('pelanggan', function () { return view('homepelanggan'); })->middleware(['checkRole:pelanggan']);
