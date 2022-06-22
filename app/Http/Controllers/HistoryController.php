@@ -9,6 +9,7 @@ use App\Models\User;
 use App\PesananDetail;
 use Auth;
 use Alert;
+// use PDF;
 class HistoryController extends Controller
 {
     public function __construct()
@@ -30,4 +31,12 @@ class HistoryController extends Controller
 
      	return view('history.detail', compact('pesanan','pesanan_details'));
     }
+    
+    // public function cetak_pdf($id)
+    // {
+    //     $pesanan = Pesanan::where('id', $id)->first();
+        
+    //     $pdf = PDF::loadview('history.index',['pesanan'=>$pesanan]);
+    //     return $pdf->stream();
+    // }
 }
