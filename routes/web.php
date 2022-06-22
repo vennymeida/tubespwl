@@ -47,6 +47,7 @@ Route::post('profile', [App\Http\Controllers\ProfileController::class, 'update']
 Route::get('history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history.index');
 Route::get('history/{id}', [App\Http\Controllers\HistoryController::class, 'detail'])->name('history.detail');
 
+Route::get('barang_pdf', [App\Http\Controllers\BarangController::class, 'barang_pdf'])->name('barang.barang_pdf');
 
 // <!-- ROUTE USER ADMIN -->
 Route::resource('pelanggan', PelangganController::class);

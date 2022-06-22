@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Barang;
 use Illuminate\Support\Facades\DB;
-
+use PDF;
 class BarangController extends Controller
 {
     /**
@@ -157,5 +157,12 @@ class BarangController extends Controller
         Barang::where('merk',$merk)->delete();
         return redirect()->route('barang.index')
         ->with('success','Barang Berhasil Dihapus');
+    }
+
+    public function barang_pdf()
+    {
+        $Barang = Barang::all();
+        $pdf = PDF::loadview('barang.barang_pdf',['barang'=>$Barang]);
+        return $pdf->stream();
     }
 };

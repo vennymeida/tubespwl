@@ -15,6 +15,7 @@
                         <input type="text" class="form-control" placeholder="" name="search" value="{{ request('search')}}" style="width: 1000px">
                         <button class="btn btn-primary" type="submit">Search</button>&emsp;
                         <a class="btn btn-success" href="{{ route('barang.create') }}"> Input Mobil</a>
+                        <a class="btn btn-primary" href="{{ route('barang.barang_pdf') }}">Cetak Data Mobil</a>
                     </div>
             </div>
         </div>
@@ -45,7 +46,7 @@
         <td>{{ $pln ->harga }}</td>
         <td>{{ $pln ->stok }}</td>
         <td>{{ $pln ->keterangan }}</td>
-        <td><img width="50px" src="{{asset('storage/'.$pln->featured_image)}}"></td>
+        <td><img width="100px" height="100px" src="{{asset('storage/'.$pln->featured_image)}}"></td>
         <td>
     <form action="{{ route('barang.destroy',['barang'=>$pln->merk]) }}" method="POST">
  

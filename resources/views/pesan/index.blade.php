@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="{{ url('uploads') }}/{{ $barang->gambar }}" class="rounded mx-auto d-block" width="100%" alt=""> 
+                            <img src="{{asset('storage/')}}/{{ $barang->featured_image}}" class="rounded mx-auto d-block" width="100%" alt=""> 
                         </div>
                         <div class="col-md-6 mt-5">
                             <h2>{{ $barang->merk }}</h2>
