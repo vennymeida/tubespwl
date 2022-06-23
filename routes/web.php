@@ -47,12 +47,13 @@ Route::post('profile', [App\Http\Controllers\ProfileController::class, 'update']
 Route::get('history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history.index');
 Route::get('history/{id}', [App\Http\Controllers\HistoryController::class, 'detail'])->name('history.detail');
 Route::get('history/{id}/history_pdf', [App\Http\Controllers\HistoryController::class, 'history_pdf'])->name('history.history_pdf');
-Route::get('barang_pdf', [App\Http\Controllers\BarangController::class, 'barang_pdf'])->name('barang.barang_pdf');
+
 
 // <!-- ROUTE USER ADMIN -->
 Route::resource('pelanggan', PelangganController::class);
 Route::resource('barang', BarangController::class);
+Route::get('barang_pdf', [App\Http\Controllers\BarangController::class, 'barang_pdf'])->name('barang.barang_pdf');
 Route::resource('user', UsersController::class);
-
+Route::get('riwayat_transaksi', [App\Http\Controllers\HistoryController::class, 'riwayat_transaksi'])->name('riwayat_transaksi.riwayat_transaksi');
 // Route::get('admin', function () { return view('pelanggan.index'); })->middleware('checkRole:admin');
 // Route::get('pelanggan', function () { return view('homepelanggan'); })->middleware(['checkRole:pelanggan']);

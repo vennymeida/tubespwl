@@ -41,4 +41,11 @@ class HistoryController extends Controller
         $pdf = PDF::loadview('history.history_pdf',compact('pesanan','pesanan_details'));
         return $pdf->stream();
     }
+
+    public function riwayat_transaksi()
+    {
+    	$pesanans = Pesanan::all();
+
+    	return view('riwayat_transaksi.riwayat_transaksi', compact('pesanans'));
+    }
 }
