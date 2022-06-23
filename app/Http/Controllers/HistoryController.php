@@ -35,9 +35,10 @@ class HistoryController extends Controller
     public function history_pdf($id)
     {
         $pesanan = Pesanan::where('id', $id)->first();
+        // dd($id);
     	$pesanan_details = PesananDetail::where('pesanan_id', $pesanan->id)->get();
 
-        $pdf = PDF::loadview('history.history_pdf',['history'=>$pesanan]);
-        return $pdf->stream(compact('pesanan','pesanan_details'));
+        $pdf = PDF::loadview('history.history_pdf',compact('pesanan','pesanan_details'));
+        return $pdf->stream();
     }
 }

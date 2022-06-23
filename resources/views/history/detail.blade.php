@@ -3,8 +3,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('history') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
-            <a href="{{ url('history/{id}/history_pdf') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Cetak</a>
+            <a href="{{ url('history') }}" class="btn btn-primary"><i></i> Tambah Pesanan</a>
+            <a href="{{ route('history.history_pdf',$pesanan->id) }}" class="btn btn-primary"><i></i> Cetak Bukti Pesanan</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
@@ -44,7 +44,7 @@
                             @foreach($pesanan_details as $pesanan_detail)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>
+                                <td>    
                                     <img src="{{asset('storage/') }}/{{ $pesanan_detail->barang->featured_image }}" width="100" height="100px" alt="...">
                                 </td>
                                 <td>{{ $pesanan_detail->barang->merk }}</td>

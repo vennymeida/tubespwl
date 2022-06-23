@@ -7,14 +7,14 @@
             </div>
             <div class="card mt-2">
                 <div class="card-body">
-                    <h3><i class="fa fa-shopping-cart"></i> Detail Pemesanan</h3>
+                    <h3><i class="fa fa-shopping-cart"></i> Bukti Pemesanan</h3>
                     @if(!empty($pesanan))
                     <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Gambar</th>
+                                <!-- <th>Gambar</th> -->
                                 <th>Merk</th>
                                 <th>Jumlah</th>
                                 <th>Harga</th>
@@ -27,9 +27,9 @@
                             @foreach($pesanan_details as $pesanan_detail)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>
+                                <!-- <td>
                                     <img src="{{asset('storage/') }}/{{ $pesanan_detail->barang->featured_image }}" width="100" height="100px" alt="...">
-                                </td>
+                                </td> -->
                                 <td>{{ $pesanan_detail->barang->merk }}</td>
                                 <td>{{ $pesanan_detail->jumlah }} mobil</td>
                                 <td align="right">Rp. {{ number_format($pesanan_detail->barang->harga) }}</td>
