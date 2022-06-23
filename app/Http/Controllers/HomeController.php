@@ -35,8 +35,9 @@ class HomeController extends Controller
     // }
     public function index()
     {
+        $barangs = Barang ::paginate(20);
        $user = Auth::user();
-       return view('main',['user' => $user]);
+       return view('main',['user' => $user,'barangs'=> $barangs]);
     }
 
     public function indexbarang()

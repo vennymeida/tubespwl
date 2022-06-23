@@ -26,10 +26,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('main');
-});
-
+// Route::get('/home', function () {
+//     return view('main');
+// });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
 Auth::routes();
 
 // <!-- ROUTE USER PELANGGAN -->

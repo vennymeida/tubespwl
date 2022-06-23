@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Barang;
 use Illuminate\Support\Facades\DB;
 use PDF;
+use Illuminate\Support\Facades\Storage;
+
 class BarangController extends Controller
 {
     /**
@@ -119,7 +121,7 @@ class BarangController extends Controller
             'Keterangan'=>'required',
             'featured_image' => 'required',
         ]);
-
+        $Barang = Barang::where('merk',$merk)->first();
         Barang::where('merk',$merk)
         ->update([
             'merk'=>$request->Merk,
