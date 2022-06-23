@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('history') }}" class="btn btn-primary"><i></i> Tambah Pesanan</a>
+            <a href="{{ url('history') }}" class="btn btn-primary"><i></i> History Pesanan</a>
             <a href="{{ route('history.history_pdf',$pesanan->id) }}" class="btn btn-primary"><i></i> Cetak Bukti Pesanan</a>
         </div>
         <div class="col-md-12 mt-2">

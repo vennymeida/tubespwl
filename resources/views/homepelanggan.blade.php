@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 mb-5">
-            <img src="{{ url('images/logo.png') }}" class="rounded mx-auto d-block" width="700" alt="">
+
         </div>
             @foreach($barangs as $barang)
             <div class="col-md-4">
                 <div class="card">
-                  <img height="290px" src="{{asset('storage/'.$barang->featured_image)}}" class="card-img-top" alt="...">>
+                  <img height="290px" src="{{asset('storage/'.$barang->featured_image)}}" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">{{ $barang->merk }}</h5>
                     <p class="card-text">
