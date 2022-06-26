@@ -87,7 +87,6 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Welcome to <span>2nd Mobil Bekas Malang</span></h2>
           <p class="animate__animated animate__fadeInUp">2nd Mobil Bekas Malang adalah situs website yang menyediakan penjualan mobil bekas yang berlokasi di kota Malang</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
 
@@ -96,7 +95,6 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">2nd Mobil Bekas Malang</h2>
           <p class="animate__animated animate__fadeInUp">Ada beberapa alasan kenapa masyarakat lebih suka cari mobil bekas ketimbang mobil baru. Alasan pertama adalah harga mobil bekas biasanya lebih murah dan terjangkau. Kemudian, membeli mobil bekas juga seringkali lebih dipilih karena bisa didapat dalam waktu cepat karena stok tersedia, ketimbang harus menunggu</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
 
@@ -105,7 +103,6 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">2nd Mobil Bekas Malang</h2>
           <p class="animate__animated animate__fadeInUp">Di tengah gempuran mobil baru di Indonesia yang terus bertambah seiring bergantinya tahun, pesona mobil bekas di Indonesia tetap masih tinggi dengan peminat yang sangat besar. Hal ini terbukti dari banyaknya masyarakat yang masih melakukan kegiatan cari mobil bekas baik secara langsung berkunjung ke bursa mobil, atau mencari melalui situs jual beli mobil bekas. </p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
 
@@ -121,48 +118,6 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
-    <!-- ======= Icon Boxes Section ======= -->
-    <section id="icon-boxes" class="icon-boxes">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-layer"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Icon Boxes Section -->
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

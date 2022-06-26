@@ -19,7 +19,8 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{asset('bootstrapp/style/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ URL::asset('bootstrapp/style/css/sb-admin-2.min.css') }}">
 
 </head>
 
@@ -68,7 +69,6 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">MENU :</h6>
                         @if (auth()->user()->role=="admin")
-                        <a class="collapse-item" href="{{ url('/pelanggan') }}">Data Pelanggan</a>
                         <a class="collapse-item" href="{{ url('/barang') }}">Data Mobil</a>
                         <a class="collapse-item" href="{{ url('/user') }}">Data User</a>
                         <a class="collapse-item" href="{{ url('/riwayat_transaksi') }}">Data Transaksi</a>
@@ -98,6 +98,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <h5 class="animate__animated animate__fadeInDown">2ND MOBIL BEKAS MALANG</h5>
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -116,14 +117,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -142,16 +135,11 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; VennyIsma 2021</span>
+                        <span>Copyright &copy; VennyIsma 2022</span>
                     </div>
                 </div>
             </footer>
             <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->

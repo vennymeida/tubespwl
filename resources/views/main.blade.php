@@ -68,7 +68,6 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">MENU :</h6>
                         @if (auth()->user()->role=="admin")
-                        <a class="collapse-item" href="{{ url('/pelanggan') }}">Data Pelanggan</a>
                         <a class="collapse-item" href="{{ url('/barang') }}">Data Mobil</a>
                         <a class="collapse-item" href="{{ url('/user') }}">Data User</a>
                         <a class="collapse-item" href="{{ url('/riwayat_transaksi') }}">Data Transaksi</a>
@@ -98,6 +97,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <h5 class="animate__animated animate__fadeInDown">DASHBOARD</h5>
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -115,14 +115,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -145,11 +137,15 @@
     <div class="row justify-content-center">
         <div class="col-md-12 mb-5">
             <img src="{{ url('images/logo.png') }}" class="rounded mx-auto d-block" width="700" alt="">
+            <div class="pull-left mt-2">
+            <h2>Hi,  {{ Auth::user()->name }}  . Selamat Datang</h2>
+            <h5>BERIKUT ADALAH DAFTAR MOBIL YANG TERSEDIA DI 2ND MOBIL BEKAS MALANG</h5>
+        </div>
         </div>
             @foreach($barangs as $barang)
             <div class="col-md-4">
                 <div class="card">
-                  <img height="290px" src="{{asset('storage/'.$barang->featured_image)}}" class="card-img-top" alt="...">>
+                  <img height="290px" src="{{asset('storage/'.$barang->featured_image)}}" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">{{ $barang->merk }}</h5>
                     <p class="card-text">
@@ -165,14 +161,13 @@
                 </div>
                 </div>
             @endforeach
-    </div>
 </div>
             @yield('content')
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; VennyIsma2021</span>
+                        <span>Copyright &copy; VennyIsma2022</span>
                     </div>
                 </div>
             </footer>

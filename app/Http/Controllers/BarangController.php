@@ -21,12 +21,12 @@ class BarangController extends Controller
             $paginate = Barang::where('merk', 'like', '%' . request('search') . '%')
                                     ->orwhere('harga', 'like', '%' . request('search') . '%')
                                     ->orwhere('stok', 'like', '%' . request('search') . '%')
-                                    ->orwhere('keterangan', 'like', '%' . request('search') . '%')->paginate(3); // Mengambil semua isi tabel
+                                    ->orwhere('keterangan', 'like', '%' . request('search') . '%')->paginate(10); // Mengambil semua isi tabel
             return view('barang.index', ['paginate'=>$paginate]);
         }else{
         //fungsi eloquent menampilkan data menggunakan pagination
         $Barang = Barang::all();
-        $paginate = Barang::orderBy('id','asc')->paginate(3);
+        $paginate = Barang::orderBy('id','asc')->paginate(10);
         return view('barang.index', ['barang'=>$Barang,'paginate'=>$paginate]);
     }
 }
