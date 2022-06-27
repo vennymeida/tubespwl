@@ -155,10 +155,11 @@ class BarangController extends Controller
      */
     public function destroy($merk)
     {
+
         //fungsi eloquent untuk menghapus data
-        Barang::where('merk',$merk)->delete();
+        Barang::where('merk', $merk)->delete();
         return redirect()->route('barang.index')
-        ->with('success','Barang Berhasil Dihapus');
+            -> with('success', 'Barang Berhasil Dihapus');
     }
 
     public function barang_pdf()

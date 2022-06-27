@@ -133,9 +133,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
+
         //fungsi eloquent untuk menghapus data
-        User::where('id',$id)->delete();
+        User::where('id', $id)->delete();
         return redirect()->route('user.index')
-        ->with('success','User Berhasil Dihapus');
+            -> with('success', 'User Berhasil Dihapus');
     }
 };
