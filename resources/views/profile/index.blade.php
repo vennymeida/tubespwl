@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('homepelanggan') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{ url('check-out') }}" class="btn btn-primary"><i></i> Check-Out</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
@@ -107,7 +107,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="password" class="col-md-2 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -127,7 +127,7 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-2">

@@ -31,7 +31,8 @@
 @endif
  
  <table class="table table-bordered">
- <tr>
+ <tr>   
+        <th>ID</th>
         <th>Name</th>
         <th>Email</th>
         <th>Alamat</th>
@@ -41,6 +42,7 @@
  </tr>
  @foreach ($paginate as $pln)
  <tr>
+        <td>{{ $pln ->id }}</td>
         <td>{{ $pln ->name }}</td>
         <td>{{ $pln ->email }}</td>
         <td>{{ $pln ->alamat }}</td>
