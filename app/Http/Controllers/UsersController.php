@@ -19,12 +19,12 @@ class UsersController extends Controller
             $paginate = User::where('name', 'like', '%' . request('search') . '%')
                                     ->orwhere('email', 'like', '%' . request('search') . '%')
                                     ->orwhere('alamat', 'like', '%' . request('search') . '%')
-                                    ->orwhere('role', 'like', '%' . request('search') . '%')->paginate(3); // Mengambil semua isi tabel
+                                    ->orwhere('role', 'like', '%' . request('search') . '%')->paginate(10); // Mengambil semua isi tabel
             return view('user.index', ['paginate'=>$paginate]);
         }else{
         //fungsi eloquent menampilkan data menggunakan pagination
         $User = User::all();
-        $paginate = User::orderBy('id','asc')->paginate(3);
+        $paginate = User::orderBy('id','asc')->paginate(10);
         return view('user.index', ['user'=>$User,'paginate'=>$paginate]);
     }
 }
