@@ -9,6 +9,7 @@ use PDF;
 use Illuminate\Support\Facades\Storage;
 use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\Facades\URL;
+use Google\Cloud\Core\Exception\NotFoundException;
 
 class BarangController extends Controller
 {
