@@ -25,10 +25,6 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::get('/home', function () {
-//     return view('main');
-// });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
 Auth::routes();
 
@@ -55,5 +51,3 @@ Route::resource('barang', BarangController::class);
 Route::get('barang_pdf', [App\Http\Controllers\BarangController::class, 'barang_pdf'])->name('barang.barang_pdf');
 Route::resource('user', UsersController::class);
 Route::get('riwayat_transaksi', [App\Http\Controllers\HistoryController::class, 'riwayat_transaksi'])->name('riwayat_transaksi.riwayat_transaksi');
-// Route::get('admin', function () { return view('pelanggan.index'); })->middleware('checkRole:admin');
-// Route::get('pelanggan', function () { return view('homepelanggan'); })->middleware(['checkRole:pelanggan']);
