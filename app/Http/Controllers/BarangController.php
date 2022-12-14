@@ -7,6 +7,8 @@ use App\Models\Barang;
 use Illuminate\Support\Facades\DB;
 use PDF;
 use Illuminate\Support\Facades\Storage;
+use Google\Cloud\Storage\StorageClient;
+use Illuminate\Support\Facades\URL;
 
 class BarangController extends Controller
 {
@@ -63,13 +65,52 @@ class BarangController extends Controller
             $image_name = $request->file('featured_image')->store('images', 'public');
         }
 
+        $image_name = '';
+        if ($request->file('featured_image')) {
+            $image_name = $request->file('featured_image');
+            // $image_name = $request->file('featured_image')->store('images', 'public');
+            $storage = new StorageClient([
+                'keyFilePath' => public_path('key.json')
+            ]);
+
+            $bucketName = env('GOOGLE_CLOUD_BUCKET');
+            $bucket = $storage->bucket($bucketName);
+
+            //get filename with extension
+            $filenamewithextension = pathinfo($request->file('featured_image')->getClientOriginalName(), PATHINFO_FILENAME);
+            // $filenamewithextension = $request->file('featured_image')->getClientOriginalName();
+
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+
+            //get file extension
+            $extension = $request->file('featured_image')->getClientOriginalExtension();
+
+            //filename to store
+            $filenametostore = $filename . '_' . uniqid() . '.' . $extension;
+
+            Storage::put('public/uploads/' . $filenametostore, fopen($request->file('featured_image'), 'r+'));
+
+            $filepath = storage_path('app/public/uploads/' . $filenametostore);
+
+            $object = $bucket->upload(
+                fopen($filepath, 'r'),
+                [
+                    'predefinedAcl' => 'publicRead'
+                ]
+            );
+
+            // delete file from local disk
+            Storage::delete('public/uploads/' . $filenametostore);
+        }
+
         
         $Barang = new Barang;
         $Barang->merk = $request->get('Merk');
         $Barang->harga = $request->get('Harga');
         $Barang->stok = $request->get('Stok');
         $Barang->keterangan = $request->get('Keterangan');
-        $Barang->featured_image = $image_name;
+        $Barang->featured_image = $filenametostore;
         // dd($Barang->featured_image);
         // //fungsi eloquent untuk menambahkan data
         $Barang->save();
